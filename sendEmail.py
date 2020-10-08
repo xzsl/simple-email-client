@@ -10,6 +10,7 @@ def plainText():
         print("请输入你学校账户的SMTP服务器(一般情况下直接为你们的网址，比如mail.bjtu.edu.cn)")
         smtpAdd=input()
         server = smtplib.SMTP(smtpAdd,25)
+        server.starttls()#加密传输
         server.ehlo()
         account=input("请输入账户：  ")
         password=getpass.unix_getpass("请输入密码：  ")
